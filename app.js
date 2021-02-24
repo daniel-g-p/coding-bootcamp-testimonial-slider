@@ -48,9 +48,10 @@ buttonPrevious.addEventListener("click", () => {
     changePerson();
 });
 
-const changePerson = () => {
+const changePerson = async() => {
     const review = reviews[index];
+    await photo.setAttribute("src", review.imageSource);
     comment.innerText = review.comment;
     person.innerHTML = `${review.personName} <span>${review.profession}</span>`;
-    photo.setAttribute("src", review.imageSource);
+    
 };
